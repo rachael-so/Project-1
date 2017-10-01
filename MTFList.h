@@ -1,41 +1,37 @@
 //
-//  orderedList.h
+//  MTFList.h
 //  project1
 //
-//  Created by Rachael So on 9/30/17.
+//  Created by Rachael So on 10/1/17.
 //  Copyright © 2017 Rachael So. All rights reserved.
 //
 
-#ifndef orderedList_h
-#define orderedList_h
-
-using namespace std;
+#ifndef MTFList_h
+#define MTFList_h
 
 /****************************************************************************
  ****************************************************************************
  *                                                                          *
- *                    class orderedList declaration                         *
+ *                      class MTFList declaration                           *
  *                                                                          *
  ****************************************************************************
  ****************************************************************************/
 
-class orderedList
+class MTFList
 {
 public:
-    orderedList();
-    orderedList( const List<T> & );
-    ~orderedList();
-    void mergeSort(int a[], int low, int high)
-    void merge(int a[], int low, int mid, int high)
-    int search(int findMe)
+    MTFList();
+    MTFList( const List<T> & );
+    ~MTFList();
+    search(int findMe)
+    moveToFront(int i)
     
 private:
     unsigned sz
     Node<int> *frontPtr
-    Node<int> *backPtr
     
 }; //END class declaration
 
 
 
-#endif /* orderedList_h */
+#endif /* MTFList_h */
