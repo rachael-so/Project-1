@@ -66,13 +66,13 @@
 			isa = PBXGroup;
 			children = (
 				CE17518E1F80761C00E0F750 /* main.cpp */,
+				CEB5C9E31F8083D7001B54F7 /* README.md */,
+				CEE9C7831F808CA700F47C13 /* orderedList.h */,
+				CE1DA5091F8179420043E441 /* MTFList.h */,
 				CE1DA50B1F82F7920043E441 /* uniform.txt */,
 				CE1DA50C1F82F7920043E441 /* uniform_small.txt */,
 				CE1DA50D1F82F7920043E441 /* poisson.txt */,
 				CE1DA50A1F82F6F90043E441 /* poisson_small.txt */,
-				CEB5C9E31F8083D7001B54F7 /* README.md */,
-				CEE9C7831F808CA700F47C13 /* orderedList.h */,
-				CE1DA5091F8179420043E441 /* MTFList.h */,
 			);
 			path = project1;
 			sourceTree = "<group>";

@@ -7,6 +7,10 @@
 //
 
 #include <iostream>
+#include "orderedList.h"
+#include "MTFList.h"
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
