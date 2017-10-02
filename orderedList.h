@@ -23,7 +23,7 @@ class orderedList
 {
 public:
     orderedList();
-    orderedList( const List<T> & );
+    orderedList( const List<int> & );
     ~orderedList();
     void mergeSort(int a[], int low, int high)
     void merge(int a[], int low, int mid, int high)
@@ -36,6 +36,23 @@ private:
     
 }; //END class declaration
 
+orderedList::orderedList() {
+    this->sz = 0;
+    this->frontPtr = NULL;
+    this->backPtr = NULL;
+}
+
+void orderedList::mergeSort() {
+    
+}
+
+void orderedList::merge(int a[], int low, int mid, int high) {
+    
+}
+
+int orderedList::search(int findMe) {
+    
+}
 
 
 #endif /* orderedList_h */

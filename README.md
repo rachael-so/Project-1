@@ -26,6 +26,6 @@ MTFList:
 Node:
     public-
         int info
-        Node<int> next
-        Node<int> previous
+        Node<int> *next
+        Node<int> *previous
         Node<int>(int, Node<int>* = NULL, Node<int>* = NULL)

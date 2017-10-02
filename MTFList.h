@@ -21,10 +21,10 @@ class MTFList
 {
 public:
     MTFList();
-    MTFList( const List<T> & );
+    MTFList( const List<int> & );
     ~MTFList();
-    search(int findMe)
-    moveToFront(int i)
+    int search(int findMe)
+    void moveToFront(int i)
     
 private:
     unsigned sz
@@ -32,6 +32,17 @@ private:
     
 }; //END class declaration
 
+MTFList::MTFList() {
+    this->sz = 0;
+    this->frontPtr = NULL;
+}
 
+int MTFList::search(int findMe) {
+    
+}
+
+void MTFList::moveToFront(int i) {
+    
+}
 
 #endif /* MTFList_h */
