@@ -12,9 +12,11 @@
 
 using namespace std;
 
-int main(int argc, const char * argv[]) {
+int main() {
     // insert code here...
     cout << "Hello, World!\n";
     
     return 0;
 }
+
+//int argc, const char * argv[]

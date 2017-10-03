@@ -25,14 +25,14 @@ class MTFList
 {
 public:
     MTFList();
-    MTFList( const List<int> & );
-    ~MTFList();
-    int search(int findMe)
-    void moveToFront(int i)
+    //MTFList( const List<int> & );
+    //~MTFList();
+    int search(int findMe);
+    void moveToFront(int i);
     
 private:
-    unsigned sz
-    Node<int> *frontPtr
+    unsigned sz;
+    Node<int> *frontPtr;
     
 }; //END class declaration
 

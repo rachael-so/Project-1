@@ -25,16 +25,16 @@ class orderedList
 {
 public:
     orderedList();
-    orderedList( const List<int> & );
-    ~orderedList();
-    void mergeSort(int a[], int low, int high)
-    void merge(int a[], int low, int mid, int high)
-    int search(int findMe)
+    //orderedList( const List<int> & );
+    //~orderedList();
+    void mergeSort(int a[], int low, int high);
+    void merge(int a[], int low, int mid, int high);
+    int search(int findMe);
     
 private:
-    unsigned sz
-    Node<int> *frontPtr
-    Node<int> *backPtr
+    unsigned sz;
+    Node<int> *frontPtr;
+    Node<int> *backPtr;
     
 }; //END class declaration
 
