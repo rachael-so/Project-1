@@ -10,6 +10,7 @@
 #define MTFList_h
 
 #include<iostream>
+#include "Node.h"
 
 using namespace std;
 
@@ -32,7 +33,7 @@ public:
     
 private:
     unsigned sz;
-    Node<int> *frontPtr;
+    Node *frontPtr;
     
 }; //END class declaration
 
@@ -42,7 +43,7 @@ MTFList::MTFList() {
 }
 
 int MTFList::search(int findMe) {
-    
+    return 0;
 }
 
 void MTFList::moveToFront(int i) {

@@ -32,6 +32,7 @@
 		CE1DA50D1F82F7920043E441 /* poisson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = poisson.txt; sourceTree = SOURCE_ROOT; };
 		CEB5C9E31F8083D7001B54F7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		CED57D5E1F8313C800764B78 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CED57D601F83160100764B78 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		CEE9C7831F808CA700F47C13 /* orderedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderedList.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -53,6 +54,7 @@
 				CEB5C9E31F8083D7001B54F7 /* README.md */,
 				CEE9C7831F808CA700F47C13 /* orderedList.h */,
 				CE1DA5091F8179420043E441 /* MTFList.h */,
+				CED57D601F83160100764B78 /* Node.h */,
 				CE1DA50B1F82F7920043E441 /* uniform.txt */,
 				CE1DA50C1F82F7920043E441 /* uniform_small.txt */,
 				CE1DA50D1F82F7920043E441 /* poisson.txt */,

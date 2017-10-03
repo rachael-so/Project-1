@@ -10,6 +10,7 @@
 #define orderedList_h
 
 #include<iostream>
+#include "Node.h"
 
 using namespace std;
 
@@ -33,8 +34,8 @@ public:
     
 private:
     unsigned sz;
-    Node<int> *frontPtr;
-    Node<int> *backPtr;
+    Node *frontPtr;
+    Node *backPtr;
     
 }; //END class declaration
 
@@ -44,7 +45,7 @@ orderedList::orderedList() {
     this->backPtr = NULL;
 }
 
-void orderedList::mergeSort() {
+void orderedList::mergeSort(int a[], int low, int high) {
     
 }
 
@@ -53,7 +54,7 @@ void orderedList::merge(int a[], int low, int mid, int high) {
 }
 
 int orderedList::search(int findMe) {
-    
+    return 0;
 }
 
 
