@@ -8,12 +8,11 @@ Node
 Ordered List:
     private-
         unsigned sz
-        Node<int> *frontPtr
-        Node<int> *backPtr
+
     public-
         void mergeSort(int a[], int low, int high)
         void merge(int a[], int low, int mid, int high)
-        int search(int findMe)
+        int search(int)
 
 MTFList:
     private-

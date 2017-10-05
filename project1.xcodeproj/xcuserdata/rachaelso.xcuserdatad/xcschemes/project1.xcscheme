@@ -64,7 +64,7 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "/Users/chongs/Desktop/Georgetown1/DataStructures/Project-1/uniform.txt"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/Users/chongs/Desktop/Georgetown1/DataStructures/Project-1/uniform_small.txt"
@@ -76,7 +76,7 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/Users/chongs/Desktop/Georgetown1/DataStructures/Project-1/poisson_small.txt"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

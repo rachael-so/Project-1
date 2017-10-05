@@ -7,16 +7,59 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include "orderedList.h"
 #include "MTFList.h"
 
 using namespace std;
 
-int main() {
-    // insert code here...
-    cout << "Hello, World!\n";
+int main(int argc, const char * argv[])
+{
+    //variable declarations
+    string fName = argv[1];
+    bool loadSuccess;
+    ifstream inputFile;
+    unsigned size;
+    string line;
     
-    return 0;
-}
+    //start of program
+    //get file from command line argument
+    inputFile.open(fName.c_str());
+    
+    //check if file opens
+    if (!inputFile) {
+        loadSuccess = false;
+        cout << "Failed to open file" << endl;
+    }
+    else if (inputFile) {
+        cout << "opened file!" << endl;
+        getline(inputFile, line);
+        istringstream iss1(line);
+        iss1 >> size;
+        
+        //construct orderedList
+        orderedList l1(size);
+        
+        //construct MTFList
+        MTFList l2;
+        
+        //populate both lists
+        int value;
+        getline(inputFile, line);
+        istringstream iss2(line);
+        while (iss2 >> value) {
+            l1.push(value);
+            l2.add(value);
+        }
+        
+        cout << l2.search(100) << endl;
+        cout << l2.search(1) << endl;
+        cout << l2.search(1) << endl;
+        
+    }
+    
+    //close the file
+    inputFile.close();
 
-//int argc, const char * argv[]
+}
