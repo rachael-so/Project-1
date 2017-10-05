@@ -47,7 +47,7 @@ MTFList::MTFList()
 
 MTFList::~MTFList()
 {
-    cout << "MTFList::~MTFList() Entered destructor for class MTFList\n";
+//    cout << "MTFList::~MTFList() Entered destructor for class MTFList\n";
     if ( frontPtr == NULL )
     {
         //nothing to do
@@ -55,19 +55,19 @@ MTFList::~MTFList()
     }
     else
     {
-        unsigned long oldCount = sz;
-        cout << "calling member function clear() ";
-        cout << "to deallocate memory for all objects on the list\n";
+//        unsigned long oldCount = sz;
+//        cout << "calling member function clear() ";
+//        cout << "to deallocate memory for all objects on the list\n";
         
         clear();
         
-        cout << "number of elements on the list was: " << oldCount << std::endl;
-        cout << "number of elements on list now is:  " << sz << std::endl;
+//        cout << "number of elements on the list was: " << oldCount << std::endl;
+//        cout << "number of elements on list now is:  " << sz << std::endl;
         
         frontPtr = NULL;
     }
     
-    cout << "MTFList::~MTFList() Exiting destructor for class Stack\n";
+//    cout << "MTFList::~MTFList() Exiting destructor for class Stack\n";
 
 }
 
@@ -104,7 +104,6 @@ int MTFList::search(int value)
     }
     else {
         index = -1;
-        cout << "value not found in list\n";
     }
 
     return index;
@@ -128,8 +127,8 @@ void MTFList::clear()
     Node *current = frontPtr;
     int i = 0;
     
-    cout << "\tMTFList::clear() preparing to remove " << sz;
-    cout << " Nodes from the linked list\n";
+//    cout << "\tMTFList::clear() preparing to remove " << sz;
+//    cout << " Nodes from the linked list\n";
     
     while (frontPtr != NULL)
     {
@@ -142,8 +141,8 @@ void MTFList::clear()
     
     current = frontPtr = NULL;
     
-    cout << "\tMTFList::clear() removed " << i << " Nodes from the list\n";
-    cout << "\tMTFList::clear() new count is: " << sz << endl;
+//    cout << "\tMTFList::clear() removed " << i << " Nodes from the list\n";
+//    cout << "\tMTFList::clear() new count is: " << sz << endl;
     
 }
 

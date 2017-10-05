@@ -9,6 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <ctime>
 #include "orderedList.h"
 #include "MTFList.h"
 
@@ -56,6 +57,11 @@ int main(int argc, const char * argv[])
         cout << l2.search(100) << endl;
         cout << l2.search(1) << endl;
         cout << l2.search(1) << endl;
+        
+        l1.mergeSort(0, size - 1);
+        cout << l1.search(1) << endl;
+        cout << l1.search(2) << endl;
+        cout << l1.search(101) << endl;
         
     }
     

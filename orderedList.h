@@ -29,13 +29,12 @@ public:
     orderedList(int sz);
     ~orderedList();
     void push(int);
-    void mergeSort(int a[], int first, int last);
+    void mergeSort(int first, int last);
     void merge(int a[], int first, int last);
-    int search(int a[], int key);
+    int search(int key);
     
 private:
     unsigned sz;
-    unsigned count;
     int *a;
     
 }; //END class declaration
@@ -43,7 +42,6 @@ private:
 orderedList::orderedList()
 {
     this->sz = 0;
-    this->count = 0;
 }
 
 orderedList::orderedList(int sz)
@@ -58,20 +56,20 @@ orderedList::~orderedList()
 }
 
 void orderedList::push(int value) {
-    for (int i = 0; i < count; i++) {
-        a[i+1] = a[i];
+    for (int i = sz; i > 0; i--) {
+        a[i] = a[i-1];
     }
     a[0] = value;
-    count++;
+    sz++;
 
 }
 
-void orderedList::mergeSort(int a[], int first, int last)
+void orderedList::mergeSort(int first, int last)
 {
     if (first < last) {
         int mid = (first + last) / 2;
-        mergeSort(a, first, mid);
-        mergeSort(a, mid + 1, last);
+        mergeSort(first, mid);
+        mergeSort(mid + 1, last);
         merge(a, first, last);
     }
 }
@@ -84,7 +82,7 @@ void orderedList::merge(int a[], int first, int last)
     int i3 = mid + 1;
     int temp[sz];
     
-    while (first && last) {
+    while (i2 <= mid && i3 <= last) {
         if (a[i2] < a[i3]) {
             temp[i1++] = a[i2++];
         }
@@ -113,14 +111,23 @@ void orderedList::merge(int a[], int first, int last)
     
 }
 
-int orderedList::search(int a[], int key)
+int orderedList::search(int key)
 {
     int low = 0, mid, high = sz - 1;
     
     while (low <= high) {
         mid = (low + high) / 2;
+        if (key < a[mid]) {
+            high = mid - 1;
+        }
+        else if (a[mid] < key) {
+            low = mid + 1;
+        }
+        else
+            return mid;
     }
-    return 0;
+
+    return -1;
 }
 
 
