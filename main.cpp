@@ -34,7 +34,7 @@ int main(int argc, const char * argv[])
         cout << "Failed to open file" << endl;
     }
     else if (inputFile) {
-        cout << "opened file!" << endl;
+//        cout << "opened file!" << endl;
         getline(inputFile, line);
         istringstream iss1(line);
         iss1 >> size;
@@ -54,15 +54,59 @@ int main(int argc, const char * argv[])
             l2.add(value);
         }
         
-        cout << l2.search(100) << endl;
-        cout << l2.search(1) << endl;
-        cout << l2.search(1) << endl;
+//        cout << l2.search(100) << endl;
+//        cout << l2.search(1) << endl;
+//        cout << l2.search(1) << endl;
         
-        l1.mergeSort(0, size - 1);
-        cout << l1.search(1) << endl;
-        cout << l1.search(2) << endl;
-        cout << l1.search(101) << endl;
+        l1.mergeSort(0, size - 1); //sort orderedList
+    
+//        cout << l1.search(1) << endl;
+//        cout << l1.search(2) << endl;
+//        cout << l1.search(101) << endl;
         
+        int numQ;
+        int query;
+        clock_t t; //initialize
+//        int u;
+        int t1 = 0, t2 = 0;
+        inputFile >> numQ;
+//        cout << endl << numQ << endl;
+        for (int i = 0; i < numQ; i++) {
+            inputFile >> query;
+            
+            //search and time for orderedList
+            t = clock();
+            l1.search(query);
+            t = clock() - t;
+            t1 += t;
+            
+            //search and time for MTFList
+            t = clock();
+            l2.search(query);
+            t = clock() - t;
+            t2 += t;
+//            u++;
+        }
+//        cout << u << endl;
+        
+        cout << "Time needed to complete the sequence of retrievals for the "
+        << " Ordered Array Structure: " << t1 << " clock ticks per second" << endl << endl;
+        
+        cout << "Time needed to complete the sequence of retrievals for the MTF Linked "
+        << "List Structure: " << t2 << " clock ticks per second" << endl << endl;
+        
+        cout << "Total retrieval times for both Lists: " << t1 + t2 << " clock ticks per second"
+        << endl << endl;
+        
+        if (t1 < t2) {
+            cout << "Retrievals for the Ordered Array Stucture was faster than for the MTF Linked "
+            << "List Structure\n";
+        }
+        else {
+            cout << "MTF Linked List Structure for the Ordered Array Stucture was faster than for "
+            << "Ordered Array Structure\n";
+        }
+
     }
     
     //close the file

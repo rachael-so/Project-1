@@ -56,11 +56,10 @@ orderedList::~orderedList()
 }
 
 void orderedList::push(int value) {
-    for (int i = sz; i > 0; i--) {
+    for (int i = sz - 1; i > 0; i--) {
         a[i] = a[i-1];
     }
     a[0] = value;
-    sz++;
 
 }
 
@@ -120,7 +119,7 @@ int orderedList::search(int key)
         if (key < a[mid]) {
             high = mid - 1;
         }
-        else if (a[mid] < key) {
+        else if (key > a[mid]) {
             low = mid + 1;
         }
         else

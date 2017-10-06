@@ -95,18 +95,17 @@ int MTFList::search(int value)
     Node *current = frontPtr;
     int index = 0;
 
-    while ( current->info != value && current->next != NULL) {
+    while (current->next != NULL) {
+//        cout << "here:" << value << "\n";
+        if ( current->info == value ) {
+            moveToFront(current);
+            return index;
+        }
         current = current->next;
         index++;
     }
-    if ( current->info == value ) {
-        moveToFront(current);
-    }
-    else {
-        index = -1;
-    }
 
-    return index;
+    return -1;
 }
 
 void MTFList::moveToFront(Node *moveMe)
@@ -114,6 +113,7 @@ void MTFList::moveToFront(Node *moveMe)
     if ( moveMe->previous != NULL ) {
 
         moveMe->previous->next = moveMe->next;
+        moveMe->next->previous = moveMe->previous;
     
         moveMe->next = frontPtr;
         frontPtr->previous = moveMe;
@@ -134,12 +134,12 @@ void MTFList::clear()
     {
         i++;
         frontPtr = frontPtr->next;
-        delete current;
+        delete [] current;
         current = frontPtr;
         sz--;
     }
     
-    current = frontPtr = NULL;
+    frontPtr = NULL;
     
 //    cout << "\tMTFList::clear() removed " << i << " Nodes from the list\n";
 //    cout << "\tMTFList::clear() new count is: " << sz << endl;

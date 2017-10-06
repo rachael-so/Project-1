@@ -72,11 +72,11 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/Users/chongs/Desktop/Georgetown1/DataStructures/Project-1/poisson.txt"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/Users/chongs/Desktop/Georgetown1/DataStructures/Project-1/poisson_small.txt"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
