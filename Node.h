@@ -20,7 +20,7 @@ public:
     Node *next;
     Node *previous;
     
-    Node(int, Node * = NULL, Node * = NULL);
+    Node(int, Node*, Node*);
 };
 
 Node::Node( int value, Node *n, Node *p )

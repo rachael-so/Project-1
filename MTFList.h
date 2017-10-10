@@ -48,13 +48,7 @@ MTFList::MTFList()
 MTFList::~MTFList()
 {
 //    cout << "MTFList::~MTFList() Entered destructor for class MTFList\n";
-    if ( frontPtr == NULL )
-    {
-        //nothing to do
-        cout << "MTFList::~MTFList() linked list is empty\n";
-    }
-    else
-    {
+    if ( frontPtr != NULL ) {
 //        unsigned long oldCount = sz;
 //        cout << "calling member function clear() ";
 //        cout << "to deallocate memory for all objects on the list\n";
@@ -67,12 +61,13 @@ MTFList::~MTFList()
         frontPtr = NULL;
     }
     
-//    cout << "MTFList::~MTFList() Exiting destructor for class Stack\n";
+//    cout << "MTFList::~MTFList() Exiting destructor for class MTFList\n";
 
 }
 
 void MTFList::add(int value)
 {
+//    cout << "entering add\n";
     Node *addMe = new Node(value, NULL, NULL);
     
     if (sz == 0) {
@@ -87,59 +82,64 @@ void MTFList::add(int value)
         frontPtr = addMe;
         sz++;
     }
+//    cout << "exiting add\n";
 
 }
 
 int MTFList::search(int value)
 {
+//    cout << "entering MTFList search\n";
     Node *current = frontPtr;
     int index = 0;
 
-    while (current->next != NULL) {
-//        cout << "here:" << value << "\n";
-        if ( current->info == value ) {
-            moveToFront(current);
-            return index;
-        }
+    while (current->next != NULL && current->info != value) {
         current = current->next;
         index++;
     }
-
+    if ( current->info == value ) {
+        moveToFront(current);
+//        cout << "exiting MTFList search\n";
+        return index;
+    }
+    
     return -1;
 }
 
 void MTFList::moveToFront(Node *moveMe)
 {
+//    cout << "entering moveToFront\n";
     if ( moveMe->previous != NULL ) {
-
+        
         moveMe->previous->next = moveMe->next;
-        moveMe->next->previous = moveMe->previous;
+        
+        if (moveMe->next != NULL)
+            moveMe->next->previous = moveMe->previous;
     
         moveMe->next = frontPtr;
         frontPtr->previous = moveMe;
         moveMe->previous = NULL;
         frontPtr = moveMe;
     }
+//    cout << "exiting moveToFront\n";
 }
 
 void MTFList::clear()
 {
     Node *current = frontPtr;
-    int i = 0;
+//    int i = 0;
     
 //    cout << "\tMTFList::clear() preparing to remove " << sz;
 //    cout << " Nodes from the linked list\n";
     
     while (frontPtr != NULL)
     {
-        i++;
+//        i++;
         frontPtr = frontPtr->next;
         delete [] current;
         current = frontPtr;
         sz--;
     }
     
-    frontPtr = NULL;
     
 //    cout << "\tMTFList::clear() removed " << i << " Nodes from the list\n";
 //    cout << "\tMTFList::clear() new count is: " << sz << endl;

@@ -55,22 +55,27 @@ orderedList::~orderedList()
     delete [] a;
 }
 
-void orderedList::push(int value) {
+void orderedList::push(int value)
+{
+//    cout << "entering push\n";
     for (int i = sz - 1; i > 0; i--) {
         a[i] = a[i-1];
     }
     a[0] = value;
+//    cout << "exiting push\n";
 
 }
 
 void orderedList::mergeSort(int first, int last)
 {
+//    cout << "entering mergeSort\n";
     if (first < last) {
         int mid = (first + last) / 2;
         mergeSort(first, mid);
         mergeSort(mid + 1, last);
         merge(a, first, last);
     }
+//    cout << "exiting mergeSort\n";
 }
 
 void orderedList::merge(int a[], int first, int last)
@@ -107,7 +112,6 @@ void orderedList::merge(int a[], int first, int last)
     {
         a[i2] = temp[i2-first];
     }
-    
 }
 
 int orderedList::search(int key)
@@ -125,7 +129,6 @@ int orderedList::search(int key)
         else
             return mid;
     }
-
     return -1;
 }
 
