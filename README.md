@@ -1,4 +1,4 @@
-# Data Structures Project-1
+# Project-1
 
 Classes:
 orderedList
